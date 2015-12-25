@@ -1,28 +1,97 @@
 apply plugin: 'com.android.application'
 
 android {
+    //版本和默认配置
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
-    repositories {
-        maven { url 'http://repo1.maven.org/maven2' }
-    }
     defaultConfig {
         applicationId "demo.grs.com.android"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
+    }
+    //签名配置
+    signingConfigs {
+        config {
+            storeFile file('keystore.jks')
+            storePassword 'key123456'
+            keyAlias 'keystore'
+            keyPassword 'key123456'
+        }
     }
     buildTypes {
-        release {
+        release {//release 混淆
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
+    //多渠道打包
+    productFlavors {
+        formal {
+            manifestPlaceholders = [SERVER_IP: "http://111.44.243.118/"]
+        }
 
+        internal {
+            manifestPlaceholders = [SERVER_IP: "http://10.2.45.18/"]
+        }
+        stage {
+            manifestPlaceholders = [SERVER_IP: "http://112.54.207.49/"]
+        }
+    }
+    packagingOptions { // 打包配置
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE' // 排除一些文件
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+    //这个是解决lint报错的代码
+    lintOptions {
+        abortOnError false
+    }
+
+    sourceSets {
+        main {//引用libs目录下的so文件，JNI <span></span> jniLibs.srcDirs = ['libs']
+        }
+    }
+    //解决MultiDex导致 Out of memory
+    dexOptions {
+        incremental true
+        jumboMode = true
+        javaMaxHeapSize "2g"
+    }
+}
+//依赖 库 第三方jar
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
+    compile 'com.android.support:multidex:'
+    compile project(':autolayout')
+    compile project(':xutils')
+    compile files('libs/AMap_Location_v1.4.1_20150917.jar')
+}
+//打包输出apk格式：app-formal/internal/stage-1.0.0-时间.apk
+android.applicationVariants.all { variant ->
+    variant.outputs.each { output->
+        def outputFile = output.outputFile
+        if (outputFile != null && outputFile.name.endsWith('.apk')) {
+            def releaseApkName =  "-"+getVersionNameFromManifest()+"-"+getDate()+'.apk'
+            def fileName = outputFile.name.replace("-release.apk", releaseApkName)
+            output.outputFile = new File(outputFile.parent, fileName)
+        }
+    }
+}
+//获取日期格式
+def getDate() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMddHHmm')
+    return formattedDate
+}
+//获取清单文件版本名 androidManifest.xml
+def getVersionNameFromManifest(){
+    def manifestParser = new com.android.builder.core.DefaultManifestParser()
+    return manifestParser.getVersionName(android.sourceSets.main.manifest.srcFile)
 }

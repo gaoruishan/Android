@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="153px"
+        android:background="#29D5F0"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="900px"
+            android:layout_height="90px"
+            android:layout_marginLeft="26px"
+            android:layout_marginTop="35px"
+            android:background="@drawable/ssk"
+            android:drawableLeft="@drawable/search"
+            android:drawablePadding="20px"
+            android:gravity="center_vertical"
+            android:hint="青海"
+            android:paddingLeft="26px"
+            android:textColor="#B2B2B2"
+            android:textSize="50px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="26px"
+            android:text="搜索"
+            android:textColor="@android:color/white"
+            android:textSize="48px" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="482px"
+        android:scaleType="fitXY"
+        android:src="@drawable/banner" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="290px"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="31px"
+        android:background="#b5bec5"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:layout_height="286px">
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/iconzhibo"
+                android:layout_marginTop="47px"
+                android:layout_height="136px" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:layout_marginTop="30px"
+                android:textSize="38px"
+                android:text="直播" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="2px"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:layout_height="286px">
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/icongongl"
+                android:layout_marginTop="47px"
+                android:layout_height="136px" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:layout_marginTop="30px"
+                android:textSize="36px"
+                android:text="攻略" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="2px"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:layout_height="286px">
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/dh"
+                android:layout_marginTop="47px"
+                android:layout_height="136px" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:textSize="36px"
+                android:layout_marginTop="30px"
+                android:text="导航" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="32px"
+        android:text="特色推荐"
+        android:drawableLeft="@drawable/btz"
+        android:drawablePadding="16px"
+        android:layout_marginLeft="28px"
+        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="26px"
+        android:layout_marginRight="26px"
+        android:layout_marginTop="32px"
+        android:layout_height="457px">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:src="@drawable/jq"
+            android:scaleType="fitXY"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="青海"
+            android:drawablePadding="21px"
+            android:id="@+id/textView"
+            android:textSize="44px"
+            android:textColor="@android:color/white"
+            android:drawableLeft="@drawable/btz"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="30px"
+            android:layout_marginBottom="106px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="一直向往的神圣地方，风景优美"
+            android:id="@+id/textView2"
+            android:textSize="44px"
+            android:textColor="@android:color/white"
+            android:layout_alignTop="@+id/textView"
+            android:layout_alignLeft="@+id/textView"
+            android:layout_marginTop="25dp" />
+    </RelativeLayout>
+   <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="26px"
+        android:layout_marginRight="26px"
+        android:layout_marginTop="32px"
+        android:layout_height="457px">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:src="@drawable/jq"
+            android:scaleType="fitXY"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="青海"
+            android:drawablePadding="21px"
+            android:id="@+id/textVie1w"
+            android:textSize="44px"
+            android:textColor="@android:color/white"
+            android:drawableLeft="@drawable/btz"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="30px"
+            android:layout_marginBottom="106px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="一直向往的神圣地方，风景优美"
+            android:id="@+id/textVie1w2"
+            android:textSize="44px"
+            android:textColor="@android:color/white"
+            android:layout_alignTop="@+id/textVie1w"
+            android:layout_alignLeft="@+id/textVie1w"
+            android:layout_marginTop="25dp" />
+    </RelativeLayout>
+
+</LinearLayout>
