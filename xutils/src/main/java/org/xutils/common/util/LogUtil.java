@@ -49,70 +49,70 @@ public class LogUtil {
         if (!x.isDebug()) return;
         String tag = generateTag();
 
-        Log.d(tag, content);
+        Log.d(tag, content+"");
     }
 
     public static void d(String content, Throwable tr) {
         if (!x.isDebug()) return;
         String tag = generateTag();
 
-        Log.d(tag, content, tr);
+        Log.d(tag, content+"", tr);
     }
 
     public static void e(String content) {
         if (!x.isDebug()) return;
         String tag = generateTag();
 
-        Log.e(tag, content);
+        Log.e(tag, content+"");
     }
 
     public static void e(String content, Throwable tr) {
         if (!x.isDebug()) return;
         String tag = generateTag();
 
-        Log.e(tag, content, tr);
+        Log.e(tag, content+"", tr);
     }
 
     public static void i(String content) {
         if (!x.isDebug()) return;
         String tag = generateTag();
 
-        Log.i(tag, content);
+        Log.i(tag, content+"");
     }
 
     public static void i(String content, Throwable tr) {
         if (!x.isDebug()) return;
         String tag = generateTag();
 
-        Log.i(tag, content, tr);
+        Log.i(tag, content+"", tr);
     }
 
     public static void v(String content) {
         if (!x.isDebug()) return;
         String tag = generateTag();
 
-        Log.v(tag, content);
+        Log.v(tag, content+"");
     }
 
     public static void v(String content, Throwable tr) {
         if (!x.isDebug()) return;
         String tag = generateTag();
 
-        Log.v(tag, content, tr);
+        Log.v(tag, content+"", tr);
     }
 
     public static void w(String content) {
         if (!x.isDebug()) return;
         String tag = generateTag();
 
-        Log.w(tag, content);
+        Log.w(tag, content+"");
     }
 
     public static void w(String content, Throwable tr) {
         if (!x.isDebug()) return;
         String tag = generateTag();
 
-        Log.w(tag, content, tr);
+        Log.w(tag, content+"", tr);
     }
 
     public static void w(Throwable tr) {
@@ -127,14 +127,14 @@ public class LogUtil {
         if (!x.isDebug()) return;
         String tag = generateTag();
 
-        Log.wtf(tag, content);
+        Log.wtf(tag, content+"");
     }
 
     public static void wtf(String content, Throwable tr) {
         if (!x.isDebug()) return;
         String tag = generateTag();
 
-        Log.wtf(tag, content, tr);
+        Log.wtf(tag, content+"", tr);
     }
 
     public static void wtf(Throwable tr) {

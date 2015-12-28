@@ -9,6 +9,8 @@ import android.os.Bundle;
 
 import com.zhy.autolayout.AutoLayoutActivity;
 
+import org.xutils.x;
+
 import demo.grs.com.android.app.AppManager;
 
 /**
@@ -30,6 +32,8 @@ public abstract class BaseActivity extends AutoLayoutActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //在基类中注入
+        x.view().inject(this);
         //进出和退出动画
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         requestTag = getClass().getName();

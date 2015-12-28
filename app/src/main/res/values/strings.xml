@@ -1,5 +1,22 @@
 <resources>
+    <!-- common -->
     <string name="app_name">Android</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">设置</string>
     <string name="title_activity_test">TestActivity</string>
+    <string name="hint_username">用户名</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="back">返回</string>
+    <!-- Login   register-->
+    <string name="login">登   录</string>
+    <string name="register">注   册</string>
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="select">选择</string>
+    <!-- dialogFactory layout -->
+    <string name="dialog_title_default">操作确认</string>
+    <string name="dialog_msg_default">您确定进行此操作吗?</string>
+    <string name="dialog_edit_msg_default">请输入群名称</string>
+    <string name="dialog_title_offline">下线提示</string>
+    <string name="dialog_logouting">正在退出当前账户</string>
 </resources>
